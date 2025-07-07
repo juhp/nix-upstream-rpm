@@ -11,3 +11,8 @@ I used a Fedora 42 WS Live 8GB instance with increased /run:
 WARNING: `/nix` and `~/.local/state/nix` will be removed!!
 
 Use at your own risk.
+
+<https://github.com/juhp/nix-upstream-rpm>
+
+(This is not intended as a replacement for <https://github.com/juhp/nix-fedora>
+which is built from source of course.)
