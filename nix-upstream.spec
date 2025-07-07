@@ -20,6 +20,7 @@ URL:            https://nixos.org/download/
 Source0:        nix-2.29.1-x86_64-linux.tar.xz
 Source1:        sysusers.conf
 Source2:        nix.conf
+Source3:        LICENSE
 
 ExclusiveArch:  x86_64
 Requires:       expect
@@ -30,6 +31,8 @@ Package the upstream nix binary tarball.
 
 %prep
 %setup -q -n nix-%{version}-x86_64-linux
+cp %{SOURCE3} .
+
 
 %build
 rm -rf ~/.local/state/nix
@@ -99,7 +102,7 @@ sudo mv /nix %{buildroot}
 
 
 %files
-#%%license add-license-file-here
+%license LICENSE
 /nix
 %{_sysconfdir}/nix/nix.conf
 %{_sysconfdir}/profile.d/*
