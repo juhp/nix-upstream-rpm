@@ -42,13 +42,7 @@ nix-shell -p busybox -p bash --run 'echo "hi from nix-shell"'
 
 
 %install
-if [ -h ~/.local/state/nix/profiles/profile-1-link ]; then
-    profile=profile-1-link
-else
-    profile=profile
-fi
-
-%global user_profile ~/.local/state/nix/profiles/${profile}
+%global user_profile ~/.local/state/nix/profiles/profile
 
 nix_profile=`readlink -f %{user_profile}`
 
